@@ -1,0 +1,6 @@
+# The smoke test and the host resolve packages from these; never commit them.
+node_modules/
+
+# Local noise
+*.log
+debug.log

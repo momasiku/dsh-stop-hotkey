@@ -1,0 +1,56 @@
+{
+  "name": "dsh-stop-hotkey",
+  "version": "0.1.0",
+  "description": "Keyboard interrupt for the DeepSeek Harness Web client: press Esc twice within 1.5s to stop the running turn of the current session, through the same conversation.cancel() path the composer's stop button uses.",
+  "license": "MIT",
+  "author": "momasiku",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "keyboard-shortcut",
+    "hotkey",
+    "interrupt",
+    "escape"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-api-session-controller"
+      ],
+      "immediately": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/momasiku/dsh-stop-hotkey.git"
+  },
+  "homepage": "https://github.com/momasiku/dsh-stop-hotkey#readme",
+  "bugs": {
+    "url": "https://github.com/momasiku/dsh-stop-hotkey/issues"
+  }
+}

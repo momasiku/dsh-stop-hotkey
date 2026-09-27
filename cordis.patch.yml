@@ -1,0 +1,10 @@
+# Bundle patch for dsh-stop-hotkey.
+#
+# `dsh plugin add` applies this as a layer and inserts the single plugin row
+# below into the composed profile configuration. The one row mounts both
+# halves: the (empty) host half in lib/index.js and the browser bundle
+# declared by `dsh.client` in package.json.
+
+- insert:
+    - id: stop-hotkey
+      name: 'dsh-stop-hotkey'
